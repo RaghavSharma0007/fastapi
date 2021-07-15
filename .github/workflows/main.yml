@@ -25,7 +25,7 @@ jobs:
         with:
           host: ${{ secrets.HOST}}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.KEY }}
           script: |
             git clone https://github.com/RaghavSharma0007/fastapi.git
             cd fastapi
