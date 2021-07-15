@@ -13,8 +13,8 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
-    name: Build
+  job_one:
+    name: deploy
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -24,8 +24,9 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST}}
-          username: ${{ secrets.USERNAME }}
+          username: ubuntu
           key: ${{ secrets.KEY }}
+          port: 22
           script: |
             git clone https://github.com/RaghavSharma0007/fastapi.git
             cd fastapi
